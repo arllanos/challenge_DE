@@ -20,7 +20,7 @@ printf "|%-${LEFT_PADDING}s%s%-${RIGHT_PADDING}s|\n" "" "$FUNCTION_NAME" ""
 printf "%-${BOX_WIDTH}s\n" | tr " " "-"
 
 # execute `memray run` with the provided arguments to generate the .bin
-memray run "$PROJECT_ROOT/src/profiling/run_memray_profiling.py" $FUNCTION_NAME $FILE_PATH
+memray run "$PROJECT_ROOT/src/profiling/memory_profiling.py" $FUNCTION_NAME $FILE_PATH
 
 # find the most recent .bin file in the profiling directory
 LAST_FILE=$(ls -t $PROJECT_ROOT/src/profiling/memray*.bin | head -1)
