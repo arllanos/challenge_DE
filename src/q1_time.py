@@ -4,8 +4,7 @@ from datetime import datetime
 
 def q1_time(file_path: str) -> List[Tuple[datetime.date, str]]:
     """
-    Processes a file containing tweets and returns the top 10 dates with the top
-    user in each date.
+    Processes a file containing tweets and returns the top 10 dates with the top user in each date.
 
     Args:
         file_path (str): The path to the file containing the tweets.

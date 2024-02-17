@@ -2,11 +2,11 @@ import sys
 from q1_memory import q1_memory
 from q1_time import q1_time
 
-def run(fx, file_path):
+def run(func, file_path):
     result = []
-    if fx == "q1_memory":
+    if func == "q1_memory":
         result = q1_memory(file_path)
-    elif fx == "q1_time":
+    elif func == "q1_time":
         result = q1_time(file_path)
     else:
         print("Function not recognized.")

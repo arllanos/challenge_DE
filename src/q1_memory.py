@@ -5,8 +5,7 @@ from datetime import datetime
 
 def q1_memory(file_path: str) -> List[Tuple[datetime.date, str]]:
     """
-    Processes a file containing tweets and returns the top 10 dates with the top
-    user in each date.
+    Processes a file containing tweets and returns the top 10 dates with the top user in each date while optimizing memory usage.
 
     Args:
         file_path (str): The path to the file containing the tweets.
@@ -17,7 +16,7 @@ def q1_memory(file_path: str) -> List[Tuple[datetime.date, str]]:
     date_counts = defaultdict(int)
     user_counts = defaultdict(lambda: defaultdict(int))
 
-    # stream and process the file
+    # read line by line to be more memory efficient
     with open(file_path, 'r', encoding='utf-8') as file:
         for line in file:
             tweet = json.loads(line)
