@@ -167,4 +167,5 @@ postgres-data
 
 src/profiling/*.bin
 src/profiling/*.html
+src/profiling/*.ans
 data/*.json
