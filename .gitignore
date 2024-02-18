@@ -165,7 +165,8 @@ cython_debug/
 data/import/*
 postgres-data
 
-src/profiling/*.bin
-src/profiling/*.html
-src/profiling/*.ans
+memray*.bin
+time*.bin
+memray*html
+memray*.ans
 data/*.json
