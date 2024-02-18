@@ -16,7 +16,7 @@ def run(func, file_path):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python run_memray_profiling.py [function] [file_path]")
+        print("Usage: python memory_profiling.py [function] [file_path]")
         sys.exit(1)
 
     function_name = sys.argv[1]
