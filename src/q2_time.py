@@ -20,6 +20,8 @@ def q2_time(file_path: str) -> List[Tuple[str, int]]:
     """
     # load the entire dataset at once
     df = pd.read_json(file_path, lines=True)
+    if df.empty:
+        return []
 
     emoji_counts = Counter()
     for content in df['content']:

@@ -4,7 +4,7 @@ from typing import List, Tuple
 
 def q3_memory(file_path: str) -> List[Tuple[str, int]]:
     # read data in chunks to be more memory efficient
-    chunk_size = 100  # adjust based on your system's memory
+    chunk_size = 250  # adjust based on your system's memory
     mention_counts = pd.Series(dtype="int")
 
     for df_chunk in pd.read_json(file_path, lines=True, chunksize=chunk_size):

@@ -1,6 +1,6 @@
 import json
 import pytest
-from src.q3_time import q3_time
+from src.q3_memory import q3_memory
 
 def create_test_file(tmp_path, data):
     file_path = tmp_path / "test_data.json"
@@ -30,12 +30,12 @@ def create_test_file(tmp_path, data):
     ([{"mentionedUsers": [{"username": "user1"}] * 100}], [("user1", 100)], "additional_test_case_large_mention_count"),
     ([{"mentionedUsers": [{"username": "user1"}] * 1000}, {"mentionedUsers": [{"username": "user2"}] * 500}], [("user1", 1000), ("user2", 500)], "additional_test_case_multiple_mentions"),
 ])
-def test_q3_time(tmp_path, test_input, expected_output, test_id):
+def test_q3_memory(tmp_path, test_input, expected_output, test_id):
     # Arrange
     file_path = create_test_file(tmp_path, test_input)
 
     # Act
-    result = q3_time(file_path)
+    result = q3_memory(file_path)
 
     # Assert
-    assert result == expected_output, f"Failed test_id: {test_id}"
+    assert sorted(result, key=lambda x: (int(x[0].replace('user', '')))) == expected_output, f"Failed test_id: {test_id}"
