@@ -1,5 +1,5 @@
 import pytest
-from src.q2_time import q2_time
+from src.q2_memory import q2_memory
 
 @pytest.fixture
 def sample_tweets_file(tmp_path):
@@ -13,19 +13,19 @@ def sample_tweets_file(tmp_path):
         f.write('{"content": "I love 😊 emojis"}\n')
     return str(file)
 
-def test_q2_time(sample_tweets_file):
+def test_q2_memory(sample_tweets_file):
     expected = [
         ("❤️", 2),
         ("✈️", 2),
         ("😊", 2),
     ]
-    actual = q2_time(sample_tweets_file)
+    actual = q2_memory(sample_tweets_file)
     assert actual == expected, f"Expected {expected}, but got {actual}"
 
-def test_q2_time_empty_file(tmp_path):
+def test_q2_memory_empty_file(tmp_path):
     file = tmp_path / "empty_tweets.json"
     with file.open('w') as f:
         pass
     expected = []
-    actual = q2_time(str(file))
+    actual = q2_memory(str(file))
     assert actual == expected, f"Expected {expected}, but got {actual}"

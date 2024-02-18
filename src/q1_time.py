@@ -14,6 +14,8 @@ def q1_time(file_path: str) -> List[Tuple[datetime.date, str]]:
     """
     # load the entire dataset at once
     df = pd.read_json(file_path, lines=True)
+    if df.empty:
+        return []
     df['date'] = pd.to_datetime(df['date']).dt.date
     df['username'] = df['user'].apply(lambda x: x['username'])
 

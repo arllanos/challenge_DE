@@ -8,24 +8,12 @@ from src.q3_time import q3_time
 
 
 def run(func, file_path):
-    result = []
-    if func == "q1_memory":
-        result = q1_memory(file_path)
-    elif func == "q1_time":
-        result = q1_time(file_path)
-    elif func == "q2_memory":
-        result = q2_memory(file_path)
-    elif func == "q2_time":
-        result = q2_time(file_path)
-    elif func == "q3_memory":
-        result = q3_memory(file_path)
-    elif func == "q3_time":
-        result = q3_time(file_path)
+    if function_to_run := globals().get(func):
+        result = function_to_run(file_path)
+        print(result)
     else:
         print(f"Function {func} not recognized.")
-    
-    print(result)
-
+        
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
