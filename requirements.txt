@@ -5,3 +5,5 @@ memray==1.11.0
 emoji==2.10.1
 pytest==8.0.1
 pytest-xdist==3.5.0
+pyspark==3.5.0
+findspark==2.0.1
